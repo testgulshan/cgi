@@ -1,0 +1,26 @@
+{
+  "name": "CGI | CSS Generator Interface",
+  "homepage": "https://github.com/testgulshan/cgi",
+  "description": "Online tool for css3 manipulation.",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "css3"
+  ],
+  "authors": [
+    "Gulshan kumar"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "1.5.0"
+  }
+}

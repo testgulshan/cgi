@@ -1,0 +1,27 @@
+{
+  "name": "cgi",
+  "version": "0.0.0",
+  "description": "Online tool for css3 manipulation.",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -o -a localhost -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/testgulshan/cgi.git"
+  },
+  "keywords": [
+    "css3"
+  ],
+  "author": "Gulshan kumar",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/testgulshan/cgi/issues"
+  },
+  "devDependencies": {
+    "bower": "~1.7.7",
+    "http-server": "~0.9.0"
+  }
+}
