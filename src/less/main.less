@@ -1,3 +1,93 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "global-styles";
+@import "colorpicker";
+
 body {
-  background: url(../images/grid-bg.gif) repeat;
+  background: @body-background;
+  font-family: @base-font;
+  color: @base-text-color;
+}
+
+.container {
+  width: @container-width;
+  margin: 0 auto;
+  // border: 1px solid #ff0000;
+}
+
+// main header
+header {
+  background: @theme-color-1;
+  text-align: center;
+  margin-bottom: @base-margin;
+  hgroup {
+    padding: 5px;
+  }
+  h1 {
+    margin: 0;
+    color: #fff;
+    font-weight: 500;
+  }
+  h3 {
+    margin: 0;
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.canvas-container {
+  padding: @base-padding;
+  background: #fff;
+  float: left;
+  border-radius: @base-border-radius;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  .canvas {
+    width: 600px;
+    height: 375px;
+    position: relative;
+    border: 1px solid @base-border-color;
+    background: url(../images/grid-bg.png) repeat;
+  }
+  .mainObj {
+    width: 349px;
+    height: 124px;
+    margin-top: 125px;
+    margin-left: 125px;
+    background: #0d6fd9;
+  }
+}
+
+.controlls {
+  float: right;
+  width: 260px;
+  font-size: .9em;
+  background: #fff;
+  min-height: 377px;
+  padding: @base-padding;
+  border-radius: @base-border-radius;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  li {
+    margin-bottom: 30px;
+  }
+  label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    display: block;
+  }
+}
+
+#colorSelector {
+  border-radius: @base-border-radius;
+  border: 3px solid @theme-color-1;
+  display: inline-block;
+  padding: 3px;
+  box-shadow: 0 5px 13px rgba(142,181,0,.5);
+  div {
+    width: 24px;
+    height: 24px;
+    background: #0d6fd9;
+  }
 }

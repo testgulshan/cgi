@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 var paths = {
   less: 'src/less/*.less',
   html: ['src/*.html', '*.html'],
-  images: 'src/images/*',
+  images: 'src/images/**/*',
   js: 'src/js/*.js',
   dist: 'dist'
 }
@@ -48,6 +48,7 @@ gulp.task('images', function() {
 // WATCH TASK
 gulp.task('watch', function() {
   gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.js, ['js']);
   gulp.watch(paths.html, ['html']);
   gulp.watch(paths.images, ['images']);
 });

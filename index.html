@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="dist/css/main.min.css">
   <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
   <title>CGI | CSS Generator Interface</title>
@@ -16,6 +17,66 @@
   <![endif]-->
 </head>
 <body ng-app>
-  {{name}}
+  <header>
+    <div class="container">
+      <hgroup class="logo">
+        <h1>C.G.I.</h1>
+        <h3>CSS Generator Interface</h3>
+      </hgroup>
+    </div>
+  </header>
+  <div class="container">
+    <div class="canvas-container">
+      <div class="canvas">
+        <div class="mainObj"></div>
+      </div>
+    </div>
+    <div class="controlls">
+      <ul>
+        <li>
+          <label>Background-color:</label>
+          <div id="colorSelector">
+            <div></div>
+          </div>
+        </li>
+        <li>
+          <label>Border-radius:</label>
+          <input type="range" id="borderRadius" value="5">
+          <input type="text" id="radiusVal">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="dist/js/colorpicker.js" type="text/javascript"></script>
+  <script>
+    $(function(){
+      // border radius
+      initialVal = $("#borderRadius").val();
+      $("#radiusVal").val(initialVal);
+      $(".mainObj").css({'border-radius' : (initialVal+"px")});
+      $('#borderRadius').on('input change', function() {
+        var getRadius = $(this).val();
+        $("#radiusVal").val(getRadius);
+        $(".mainObj").css({'border-radius' : (getRadius+"px")});
+      });
+
+      // color picker
+      $('#colorSelector').ColorPicker({
+        color: '#0d6fd9',
+        onShow: function (colpkr) {
+          $(colpkr).fadeIn(500);
+          return false;
+        },
+        onHide: function (colpkr) {
+          $(colpkr).fadeOut(500);
+          return false;
+        },
+        onChange: function (hsb, hex, rgb) {
+          $('#colorSelector div, .mainObj').css('backgroundColor', '#' + hex);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
